@@ -90,6 +90,7 @@ BuildRequires: libmp4v2-devel
 BuildRequires: x264-devel
 
 %{?with_nginx:Requires: nginx}
+%{?with_nginx:Requires: fcgiwrap}
 %{?with_nginx:Requires: php-fpm}
 %{!?with_nginx:Requires: httpd}
 %{!?with_nginx:Requires: php}
