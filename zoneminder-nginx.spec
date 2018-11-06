@@ -26,7 +26,7 @@
 
 Name: zoneminder-nginx
 Version: 1.32.2
-Release: 2%{?dist}
+Release: 3%{?dist}
 Summary: A camera monitoring and analysis tool
 Group: System Environment/Daemons
 # Mootools is inder the MIT license: http://mootools.net/
@@ -104,7 +104,11 @@ Requires: net-tools
 Requires: psmisc
 Requires: polkit
 Requires: libjpeg-turbo
-Requires: vlc-core
+
+#Uncomment after pi hw accel is fixed 
+#https://trac.videolan.org/vlc/ticket/18594
+#Requires: vlc-core
+
 Requires: ffmpeg
 Requires: perl(:MODULE_COMPAT_%(eval "`%{__perl} -V:version`"; echo $version))
 Requires: perl(DBD::mysql)
@@ -325,6 +329,9 @@ EOF
 %dir %attr(755,%{zmuid_final},%{zmgid_final}) %{_localstatedir}/run/zoneminder
 
 %changelog
+* Tue Nov 6 2018 Andrew Bauer <zonexpertconsulting@outlook.com> - 1.32.2-3
+- Remove vlc-core requires
+
 * Mon Nov 5 2018 Andrew Bauer <zonexpertconsulting@outlook.com> - 1.32.2-2
 - Build with nginx support for FedBerry
 
