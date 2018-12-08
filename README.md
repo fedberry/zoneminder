@@ -5,8 +5,7 @@ The FedBerry project team has coordinated with the ZoneMinder project to produce
 Here are some important features:
 
 - Built against ffmpeg with hardware accel: mmal, omx, omx-rpi, and neon enabled
-- libvlc method temporarily disabled until hardware accel bug is fixed. See ticket [18594](https://trac.videolan.org/vlc/ticket/18594).
-- Uses Nginx rather than Apache
+- Built against libvlc with hardware accel: mmal, omx, omx-rpi, and neon enabled
+- ZoneMinder has been broken into subpackages. Install zoneminder-nginx for Nginx support or zoneminder-httpd for legacy Apache support
 - After package installation, remember to follow all the steps found in /usr/share/doc/zoneminder-nginx/README
-
 
